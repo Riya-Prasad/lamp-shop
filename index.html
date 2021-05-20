@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lamp Shop</title>
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+</head>
+<body>
+
+    <div class="conatiner">
+        <div class="outline"></div>
+        <div class="logo">Lumus</div>
+        <div class="menu">
+            <ion-icon class="menu"></ion-icon>
+        </div>
+
+        <div class="title">
+            Light Your Life 
+        </div>
+
+        <div class="more-lamp">
+            <button>Watch More</button>
+        </div>
+    </div>
+    
+
+    <div class="lamps">
+        <div id="wrap">
+            <a href="" class="block">
+                <div class="product one">
+                    <img src="L1.jpeg" alt="">
+                    <div class="txt">
+                        <h1>Lamp 1</h1>
+                        <p>Price : $200</p>
+                        <div class="add">
+                            <button>BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="block">
+                <div class="product two">
+                    <img src="L2.png" alt="">
+                    <div class="txt">
+                        <h1>Lamp 2</h1>
+                        <p>Price : $250</p>
+                        <div class="add">
+                            <button>BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="block">
+                <div class="product three">
+                    <img src="L3.png" alt="">
+                    <div class="txt">
+                        <h1>Lamp 3</h1>
+                        <p>Price : $320</p>
+                        <div class="add">
+                            <button>BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="block">
+                <div class="product four">
+                    <img src="L4.jpeg" alt="">
+                    <div class="txt">
+                        <h1>Lamp 4</h1>
+                        <p>Price : $470</p>
+                        <div class="add">
+                            <button>BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="block">
+                <div class="product five">
+                    <img src="L5.jpeg" alt="">
+                    <div class="txt">
+                        <h1>Lamp 5</h1>
+                        <p>Price : $250</p>
+                        <div class="add">
+                            <button>BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="block">
+                <div class="product six">
+                    <img src="L6.png" alt="">
+                    <div class="txt">
+                        <h1>Lamp 6</h1>
+                        <p>Price : $650</p>
+                        <div class="add">
+                            <button>BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <a class="close-btn">Close</a>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var docWidth = $('body').width(),
+            $wrap = $('#wrap'),
+            $images = $('#wrap .block'),
+            slidesWidth = $wrap.width();
+
+            $(window).on('resize', function() {
+                docWidth = $('body').width();
+                slidesWidth = $wrap.width();
+            })
+
+            $(document).mousemove(function(e) {
+                var mouseX = e.pageX,
+                offset = mouseX / docWidth * slidesWidth - mouseX / 2;
+
+                $images.css({
+                    '-wrbkit-transform' : 'translate3d(' + -offset + 'px,0,0)',
+                    'transform' : 'translate3d(' + -offset + 'px,0,0)',
+                });
+            });
+        })
+
+        var t1 = new TimelineMax({paused: true});
+
+        TweenMax.from(".logo", 0.5, {
+            opacity: 0,
+            y: 10,
+            delay: 1
+        });
+
+        TweenMax.from(".menu", 0.5, {
+            opacity: 0,
+            y: 10,
+            delay: 1.2
+        });
+
+        TweenMax.from(".title", 1, {
+            opacity: 0,
+            y: 5,
+            delay: 1.4
+        });
+
+        TweenMax.from(".more-lamp", 0.5, {
+            opacity: 0,
+            x: 4,
+            delay: 1.6
+        });
+
+        t1.to(".lamps", 1, {
+            autoAlpha: 1
+        });
+
+        t1.from(".one", 0.5, {
+            opacity: 0,
+            y: 20,
+            delya: 0.1
+        }, "-=1");
+
+        t1.from(".two", 0.5, {
+            opacity: 0,
+            y: 20,
+            delya: 0.3
+        }, "-=1");
+
+        t1.from(".three", 0.5, {
+            opacity: 0,
+            y: 20,
+            delya: 0.5
+        }, "-=1");
+
+        t1.from(".four", 0.5, {
+            opacity: 0,
+            y: 20,
+            delya: 0.7
+        }, "-=1");
+
+        t1.reverse();
+        $(document).on("click", ".more-lamp", function() {
+            t1.reversed(!t1.reversed());
+        });
+
+        $(document).on("click", "a", function() {
+            t1.reversed(!t1.reversed());
+        });
+
+        $(document).on("click", ".close-btn a", function() {
+            t1.reversed(!t1.reversed());
+        });
+
+    </script>
+    
+</body>
+</html>

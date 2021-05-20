@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(wall.jpg) no-repeat 50% 80%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.outline{
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 97%;
+    height: 94vh;
+    background: none;
+    border: 1px solid #1eae98;
+    border-radius: 0 34px 0 34px;
+
+}
+
+
+.logo{
+    position: fixed;
+    margin: 2em 3em;
+    transform: translate(-50%, -50%);
+    font-family: 'Berkshire Swash', cursive;
+    color: #f8f5f1;
+    font-size: 2.3rem;
+    z-index: 1;
+}
+
+.menu{
+    position: fixed;
+    right: 0;
+    margin: 3em 2em;
+    transform: translate(-50%, -50%);
+    color: #51c4d3;
+    font-size: 24px;
+    z-index: 1;
+}
+
+
+.title{
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f8f5f1;
+    z-index: 1;
+    font-size: 4rem;
+    font-weight: 500;
+    word-spacing: 20px;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+
+.more-lamp{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+
+button{
+    background: none;
+    padding: 20px 48px;
+    color: #1eae98;
+    border: 1px solid #1eae98;
+    text-transform: uppercase;
+    letter-spacing: 4px ;
+}
+
+
+button:focus{
+    outline: none;
+    border: none;
+}
+
+
+button:hover{
+    color: #fff;
+    transform: scaleY(1.04);
+}
+
+
+.lamps{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #810000;
+    z-index: 1;
+    opacity: 0;
+}
+
+
+#wrap{
+    position: absolute;
+    left: 0%;
+    top: -8%;
+    width: 150%;
+    height: 100%;
+    display: flex;
+    margin: 0 25%;
+}
+
+
+.block{
+    position: relative;
+    width: 25%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    transform: scale(0.97);
+}
+
+.block:hover .txt{
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+}
+
+.product{
+    position: relative;
+    display: block;
+    max-width: 80%;
+}
+
+.product img{
+    position: relative;
+    display: block;
+    width: 80%;
+    height: auto;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+
+.txt {
+    position: absolute;
+    top: 104%;
+    left: 2%;
+    width: 80%;
+    opacity: 0;
+    text-align: center;
+    font-family: 'Josefin Slab', serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    z-index: 1;
+    transform: scaleY(1) translateY(-30px);
+    transition: transform .2s, opacity .5s;
+}
+
+.txt p {
+    margin-bottom: 20px;
+}
+
+
+.two .txt{
+    padding-top: 2.4rem;
+}
+
+.five .txt{
+    padding-top: 2.4rem;
+}
+
+
+.lamps button{
+    margin-top: 10px;
+    padding: 16px 28px;
+}
+
+
+h1{
+    font-family: 'Josefin Slab', serif;
+    color:#f8f5f1;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+.close-btn{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 1rem;
+    padding-right: 2.1rem;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    font-family: 'Berkshire Swash', cursive;
+    color: #000;
+    transition: 0.3s;
+    z-index: 3;
+    cursor: pointer;
+}
+
+
+.close-btn:hover{
+    color: #fff;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+
+@media(max-width: 768px) {
+    .title{
+        font-size: 42px;
+    }
+
+    .tagline{
+        font-size: 15px;
+    }
+
+    .outline{
+        width: 92%;
+    }
+}
+
+
